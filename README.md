@@ -48,7 +48,6 @@ qa-banking-app-tests/
 
 ---
 
-## ▶️ Instalación
 
 ### 1️⃣ Clonar el repositorio
 ```bash
