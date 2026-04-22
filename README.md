@@ -1,56 +1,86 @@
 <<<<<<< HEAD
 # qa-banking-app-tests
 =======
-# 🏦 QA Banking App – Automated Tests (Selenium + Pytest)
+# 🏦 QA Automated Testing – HomeBanking Demo App
 
-Automatización de pruebas End-to-End para una aplicación bancaria web utilizando **Python**, **Selenium WebDriver** y **Pytest**.  
-Incluye validación de flujos críticos, pruebas negativas, manejo dinámico de datos y reporte profesional de bugs.
+Este proyecto contiene un conjunto completo de **pruebas manuales, automatizadas y análisis del DOM** para la aplicación:
+
+🔗 https://homebanking-demo-tests.netlify.app/
+
+Incluye:
+
+- ✔️ Pruebas funcionales (manuales)
+- ✔️ Pruebas automatizadas con Selenium + PyTest
+- ✔️ Validaciones de UI, transferencia, login y dashboard
+- ✔️ Manejo de modales, esperas explícitas y sincronización
+- ✔️ Pipeline CI/CD con GitHub Actions
+- ✔️ Reporte profesional en PDF
+- ✔️ Análisis de performance y network con Chrome DevTools
 
 ---
 
-## 📌 Características principales
-
-- ✔ Automatización basada en el patrón **Page Object Model (POM)**
-- ✔ Pruebas positivas y negativas
-- ✔ Detección automática de cuenta con menor saldo
-- ✔ Validación de mensajes de error y flujos críticos
-- ✔ Integración con **GitHub Actions (CI/CD)**
-- ✔ Reporte PDF profesional de bug crítico encontrado en producción
-
----
 
 ## 📁 Estructura del Proyecto
 qa-banking-app-tests/
 │
-├── pages/ # Page Objects (interacciones con la UI)
-│ ├── base_page.py
-│ ├── login_page.py
-│ ├── dashboard_page.py
-│ └── transfer_page.py
-│
-├── tests/ # Test cases
-│ ├── test_login_valid.py
-│ ├── test_invalid_login.py
-│ └── test_transfer_insufficient_balance.py
-│
-├── utils/
-│ ├── driver_factory.py
-│ └── helpers.py
-│
-├── reports/
-│ └── Reporte_Bug_QA.pdf
-│
-├── .github/workflows/
-│ └── python-tests.yml # Integración CI/CD
-│
-├── requirements.txt
-└── README.md
+├── pages/ → Page Objects (Login, Dashboard, Transfer)
+├── tests/ → Pruebas automatizadas PyTest
+├── utils/ → Driver factory, helpers
+├── requirements.txt → Dependencias
+├── README.md → Documentación
+└── QA_Full_Test_Report_HomeBanking.pdf
 
 ---
 
+---
 
-### 1️⃣ Clonar el repositorio
-```bash
-git clone https://github.com/jroldanmadrigral-ai/qa-banking-app-tests.git
-cd qa-banking-app-tests
->>>>>>> 8e03f23 (Add README.md documentation)
+## 🧪 Pruebas Implementadas
+
+### ✔️ Login Tests
+- test_valid_login  
+- test_invalid_login  
+
+### ✔️ Dashboard Tests
+- Verificación de saldos  
+- Validación de elementos visibles  
+
+### ✔️ Transfer Tests
+- Transferencia válida  
+- Transferencia con saldo insuficiente (con modal)  
+- Validación de errores  
+
+---
+
+## 🐞 Corrección de Falso Positivo
+
+Durante la automatización se identificó inicialmente un supuesto bug de sobregiro.  
+Tras una segunda validación manual se determinó:
+
+❗ No era un bug  
+✔️ La app sí valida correctamente  
+✔️ La automatización estaba capturando el error antes del modal  
+
+Se ajustó la sincronización del test para alinearlo con el comportamiento real.
+
+---
+
+## ⚙️ GitHub Actions (CI)
+
+Este proyecto ejecuta los tests automáticamente con cada push:
+
+.github/
+└── workflows/
+└── python-tests.yml
+
+
+---
+
+## 📄 Reporte en PDF
+
+Incluye:
+- Pruebas manuales
+- Resultados automatizados
+- Análisis del DOM (Performance + Network)
+- Conclusiones QA
+
+Archivo: **QA_Full_Test_Report_HomeBanking.pdf**
